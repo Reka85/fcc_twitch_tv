@@ -4,31 +4,51 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <!--bootstrap-->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <!--jquery ui-->
       <!--google fonts-->
       <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <title>Twitch TV API Project</title>
   </head>
   <body>
-    <button id="button">Click</button>
-    <div class="row">
-      <div class="col-xs-2 col-md-4">
-        <div id="channels">
-          <div id="channel">
-            <div id="name">
-              <p><strong>Name: </strong></p>
-            </div>
-            <div id="channel-url">
-              <p><strong>Url: </strong></p>
-            </div>
-            <div id="fps">
-              <p><strong>Average fps: </strong></p>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-8 mx-auto text-center">
+          <h2>Look for channels streaming on Twitch tv</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-6 mx-auto">
+          <div class="input-group stylish-input-group">
+            <input id="search-field" type="text" class="form-control"  placeholder="Search" >
+            <span class="input-group-addon">
+                <button id ="search-button" type="submit" class="btn btn-default">
+                    <i class="fa fa-search"></i>
+                </button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-2 col-md-4">
+          <div id="channels">
+            <div id="channel">
+              <div id="name">
+                <p><strong>Name: </strong></p>
+              </div>
+              <div id="channel-url">
+                <p><strong>Url: </strong></p>
+              </div>
+              <div id="fps">
+                <p><strong>Average fps: </strong></p>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
     <script type="text/javascript" src="scripts/script.js"></script>
   </body>
