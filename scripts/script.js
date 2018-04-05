@@ -1,6 +1,8 @@
 $(document).ready(function(){
   const button = $("#search-button");
-  const searchField = $("#search-field");
+
+  const channel = $("#channel");
+
 
   button.click(function(){
     const channelName = searchField.val();
@@ -17,19 +19,23 @@ $(document).ready(function(){
           $("#fps").append(
             `<span>${data.stream.average_fps}</span>`
             );
-          $("#channel").append(
+          channel.append(
             `<img src=\"${channelDetails.logo}\"/>`
             );
         } else {
-          $("#channel").html('');
-          $("#channel").append("<p>This channel is not streaming at the moment. Try again later!</p>")
+          channel.append("<p>This channel is not streaming at the moment. Try again later!</p>")
         }
       });
     } else {
-      $("#channel").html('');
-      $("#channel").append("<p>Please enter a channel name</p>")
+      channel.append("<p>Please enter a channel name</p>")
     }
   });
 });
 
+// // without the arrow function
+// }).then(function(response) {
+//     return response.json();
+// })
 
+// // using the arrow function
+// }).then(response => response.json())

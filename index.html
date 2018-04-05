@@ -8,7 +8,7 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <!--jquery ui-->
       <!--google fonts-->
-      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="stylesheets/style.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <title>Twitch TV API Project</title>
   </head>
@@ -16,21 +16,21 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-md-8 mx-auto text-center">
-          <h2>Look for channels streaming on Twitch tv</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-md-6 mx-auto">
-          <div class="input-group stylish-input-group">
-            <input id="search-field" type="text" class="form-control"  placeholder="Search" >
-            <span class="input-group-addon">
-                <button id ="search-button" type="submit" class="btn btn-default">
-                    <i class="fa fa-search"></i>
-                </button>
-            </span>
+          <div id="title">
+            <h2>Look for channels streaming on Twitch tv</h2>
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-8 mx-auto">
+          <div id="buttons">
+            <button class="btn btn-default" id="#all">All</button>
+            <button class="btn btn-default" id="#online">Online</button>
+            <button class="btn btn-default" id="#offline">Offline</button>
+          </div>
+        </div>
+      </div>
+
       <div class="row">
         <div class="col-xs-2 col-md-4">
           <div id="channels">
