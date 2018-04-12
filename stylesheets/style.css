@@ -1,3 +1,7 @@
+body{
+  background-color: #eaeaea;
+}
+
 a{
   text-decoration: none;
   color: inherit;
@@ -15,6 +19,23 @@ a:hover{
   margin-top: 8vh;
   display: flex;
   justify-content: space-around;
+}
+
+.button{
+  padding: 4px 26px;
+  border: 2px solid rgb(80,80,80);
+  border-radius:4px;
+    box-shadow:
+        inset 0px 1px 3px -1px #CCC,
+        inset 0px -1px 3px -1px #CCC;
+}
+
+.button:hover{
+  cursor: pointer;
+}
+
+#all{
+  /*background-color: rgb(80,80,80);*/
 }
 
 #channels{
@@ -40,6 +61,7 @@ a:hover{
 }
 
 .card-image{
+  position:relative;
   height: 56%;
   border-radius: inherit;
   background-size: cover;
@@ -69,14 +91,15 @@ a:hover{
 
 /*on/offline*/
 .status{
-  position:relative;
+  position:absolute;
   width: 100%;
   padding: 0.3em 0;
   color:white;
-  opacity: 0.74;
+  opacity: 0.5;
   border-radius: inherit;
-  top:80%;
+  bottom:0;
   text-align: center;
+  margin-bottom: 0;
 }
 
 .offline{
