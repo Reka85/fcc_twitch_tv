@@ -13,6 +13,7 @@ function channelSetup(channels){
     fetch(`https://wind-bow.glitch.me/twitch-api/channels/${channel}`)
           .then(response => response.json())
           .then(function(data){
+            console.log(data);
             const name = data.display_name;
             const logo_url = data.logo_url;
             const status = data.status;
@@ -21,7 +22,9 @@ function channelSetup(channels){
             const followers = data.followers;
 
             createChannelHtml(name,status,url, image,followers);
-            addChannelImage(name, image);
+            const card =  document.getElementById(`${name}`);
+            addChannelImage(card, image);
+            channelLive(card, data.partner)
           })
   });
 }
@@ -43,8 +46,13 @@ function createChannelHtml(channelName, channelStatus, channelUrl, channelImage,
   channelsElem.insertAdjacentHTML("afterbegin", channelCard);
 }
 
-function addChannelImage(channelName, channelImage){
-  const channel = document.getElementById(`${channelName}`);
-  channel.style.backgroundImage = channelImage ? `url('${channelImage}')` : "url('./images/no-image-available.jpg')"
+function addChannelImage(channelCard, channelImage){
+  //const channel = document.getElementById(`${channelName}`);
+  channelCard.style.backgroundImage = channelImage ? `url('${channelImage}')` : "url('./images/no-image-available.jpg')";
+}
+
+function channelLive(channelCard, channelPartner){
+  const isLive =  channelPartner ? "<p class='status online'>Online</p>" : "<p class='status offline'>Offline</p>";
+  channelCard.insertAdjacentHTML("afterbegin", isLive);
 }
 

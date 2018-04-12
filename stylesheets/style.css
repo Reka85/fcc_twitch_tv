@@ -58,7 +58,6 @@ a:hover{
   padding: 0 8px;
 }
 
-
 .card-link{
   position: absolute;
   width: 100%;
@@ -68,3 +67,21 @@ a:hover{
   z-index: 1;
 }
 
+/*on/offline*/
+.status{
+  position:relative;
+  width: 100%;
+  padding: 0.3em 0;
+  color:white;
+  opacity: 0.74;
+  border-radius: inherit;
+  top:80%;
+  text-align: center;
+}
+
+.offline{
+  background-color: rgb(40,40,40);
+}
+.online{
+  background-color: rgb(20,120,20);
+}
