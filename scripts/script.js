@@ -11,9 +11,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 function channelSetup(channels){
   channels.forEach(function(channel){
     fetch(`https://wind-bow.glitch.me/twitch-api/channels/${channel}`)
-          .then(response => response.json())
+          .then(function(response){
+            if (response.ok){
+              return response.json();
+            }else{
+              throw new Error('Network response was not ok,');
+            }
+          })
           .then(function(data){
-            console.log(data);
             const name = data.display_name;
             const logo_url = data.logo_url;
             const status = data.status;
@@ -25,7 +30,7 @@ function channelSetup(channels){
             const card =  document.getElementById(`${name}`);
             addChannelImage(card, image);
             channelLive(card, data.partner)
-          })
+          }).catch(error => console.log(error));
   });
 }
 

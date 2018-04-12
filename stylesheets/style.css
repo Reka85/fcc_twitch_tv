@@ -17,8 +17,6 @@ a:hover{
 
 #buttons{
   margin-top: 8vh;
-  display: flex;
-  justify-content: space-around;
 }
 
 .button{
@@ -32,10 +30,6 @@ a:hover{
 
 .button:hover{
   cursor: pointer;
-}
-
-#all{
-  /*background-color: rgb(80,80,80);*/
 }
 
 #channels{
@@ -95,7 +89,7 @@ a:hover{
   width: 100%;
   padding: 0.3em 0;
   color:white;
-  opacity: 0.5;
+  opacity: 0.8;
   border-radius: inherit;
   bottom:0;
   text-align: center;
